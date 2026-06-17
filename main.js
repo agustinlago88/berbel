@@ -50,6 +50,9 @@
         var modalId = procedureName + 'Modal';
         var modal = document.getElementById(modalId);
         if (modal) {
+            // Pause any playing video inside the modal
+            var video = modal.querySelector('video');
+            if (video) video.pause();
             modal.classList.remove('active');
             document.body.style.overflow = '';
         }
@@ -57,6 +60,9 @@
 
     function closeAllModals() {
         document.querySelectorAll('.modal.active').forEach(function (modal) {
+            // Pause any playing video inside each modal
+            var video = modal.querySelector('video');
+            if (video) video.pause();
             modal.classList.remove('active');
         });
         document.body.style.overflow = '';

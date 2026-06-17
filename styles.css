@@ -743,6 +743,84 @@ section h2 {
 }
 
 /* ============================================
+   Video Showcase Section
+   ============================================ */
+.video-showcase {
+    background: linear-gradient(180deg, var(--gray-light) 0%, #e8e4df 50%, var(--gray-light) 100%);
+    text-align: center;
+    padding: 5rem 2rem;
+}
+
+.video-showcase-header {
+    margin-bottom: 3rem;
+}
+
+.video-eyebrow {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    font-family: 'Manrope', sans-serif;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    padding: 0.5rem 1.2rem;
+    border: 1px solid rgba(201,169,97,0.4);
+    border-radius: 999px;
+    background: rgba(201,169,97,0.08);
+}
+
+.video-showcase h2 {
+    margin-top: 1rem;
+}
+
+.video-showcase .section-subtitle {
+    margin-bottom: 0;
+}
+
+.video-container {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(15,31,46,0.18), 0 4px 16px rgba(0,0,0,0.08);
+    background: #000;
+    position: relative;
+    aspect-ratio: 16/9;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.video-cta {
+    margin-top: 2.5rem;
+}
+
+/* Modal video */
+.modal-video {
+    margin-top: 1.5rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--border);
+}
+
+.modal-video p {
+    margin-bottom: 0.8rem;
+}
+
+.modal-video video {
+    width: 100%;
+    border-radius: 12px;
+    background: #000;
+    display: block;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+/* ============================================
    Floating WhatsApp Button
    ============================================ */
 .whatsapp-float {
@@ -1087,6 +1165,32 @@ footer a:hover {
     .credentials {
         padding: 1.5rem;
     }
+
+    .video-showcase {
+        padding: 3.5rem 1.5rem;
+    }
+
+    .video-showcase-header {
+        margin-bottom: 2rem;
+    }
+
+    .video-container {
+        border-radius: 12px;
+        aspect-ratio: 4/3;
+    }
+
+    .video-cta {
+        margin-top: 2rem;
+    }
+
+    .video-cta .btn-primary {
+        width: 100%;
+    }
+
+    .modal-video video {
+        max-height: 220px;
+        border-radius: 8px;
+    }
 }
 
 /* ============================================
@@ -1179,6 +1283,24 @@ footer a:hover {
     .modal-content p,
     .modal-content ul {
         font-size: 0.88rem;
+    }
+
+    .video-showcase {
+        padding: 2.5rem 1rem;
+    }
+
+    .video-eyebrow {
+        font-size: 0.58rem;
+        padding: 0.35rem 0.8rem;
+        letter-spacing: 0.2em;
+    }
+
+    .video-container {
+        border-radius: 10px;
+    }
+
+    .modal-video video {
+        max-height: 180px;
     }
 }
 
