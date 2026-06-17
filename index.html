@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-vr59LqWEtYl4IaGS9ytalcYheoW66uVIMXLixR3u/8g='; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://agustinlago88.github.io; frame-src https://maps.google.com https://www.google.com; connect-src 'self'; media-src 'self';">
 
     <!-- TITLE: ≤60 chars. Enfoque en credencial + tecnología + ubicación. Sin body shaming. -->
     <title>Dr. Gastón Berbel | Contorno Corporal VASER · Puerto Madero</title>
@@ -181,6 +182,23 @@
                 "description": "Combinación personalizada de técnicas avanzadas para un contorno armónico y proporcionado. Tratamiento de múltiples zonas corporales.",
                 "procedureType": "https://schema.org/SurgicalProcedure",
                 "bodyLocation": "Abdomen, cintura, caderas, muslos, espalda, brazos"
+            },
+            {
+                "@type": "VideoObject",
+                "name": "Tecnología MELA en Acción | Dr. Gastón Berbel",
+                "description": "Video demostrativo y explicativo sobre el procedimiento MELA (Mini Extracción Lipídica Ambulatoria) en Puerto Madero por el Dr. Gastón Berbel.",
+                "thumbnailUrl": [
+                    "https://agustinlago88.github.io/berbel/images/dr-berbel-crop.jpg"
+                ],
+                "uploadDate": "2026-06-17T12:00:00-03:00",
+                "contentUrl": "https://agustinlago88.github.io/berbel/melavideo.mp4",
+                "embedUrl": "https://agustinlago88.github.io/berbel/melavideo.mp4",
+                "duration": "PT0M28S",
+                "regionsAllowed": ["AR", "UY", "CL"],
+                "creator": {
+                    "@type": "Person",
+                    "name": "Dr. Gastón Berbel"
+                }
             }
         ]
     }
@@ -256,7 +274,7 @@
                 <h2>Nuestros Procedimientos</h2>
                 <p class="section-subtitle">Transformaciones seguras y efectivas con tecnología de punta</p>
                 <div class="services-grid">
-                    <article class="service-card" onclick="openModal('lipo')" role="button" tabindex="0" aria-label="Ver detalles de Liposucción Micro Aire y VASER" id="card-lipo">
+                    <article class="service-card" data-modal-open="lipo" role="button" tabindex="0" aria-label="Ver detalles de Liposucción Micro Aire y VASER" id="card-lipo">
                         <div class="service-icon">
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <path d="M6 9c0-1.657 1.343-3 3-3h6c1.657 0 3 1.343 3 3v8c0 1.657-1.343 3-3 3H9c-1.657 0-3-1.343-3-3V9z"/>
@@ -269,7 +287,7 @@
                         <span class="service-link" aria-hidden="true">Más información →</span>
                     </article>
 
-                    <article class="service-card" onclick="openModal('mela')" role="button" tabindex="0" aria-label="Ver detalles de MELA" id="card-mela">
+                    <article class="service-card" data-modal-open="mela" role="button" tabindex="0" aria-label="Ver detalles de MELA" id="card-mela">
                         <div class="service-icon">
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
@@ -280,7 +298,7 @@
                         <span class="service-link" aria-hidden="true">Más información →</span>
                     </article>
 
-                    <article class="service-card" onclick="openModal('dermolipectomy')" role="button" tabindex="0" aria-label="Ver detalles de Dermolipectomía" id="card-dermolipectomy">
+                    <article class="service-card" data-modal-open="dermolipectomy" role="button" tabindex="0" aria-label="Ver detalles de Dermolipectomía" id="card-dermolipectomy">
                         <div class="service-icon">
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <circle cx="6" cy="6" r="3"/>
@@ -294,7 +312,7 @@
                         <span class="service-link" aria-hidden="true">Más información →</span>
                     </article>
 
-                    <article class="service-card" onclick="openModal('abdominoplasty')" role="button" tabindex="0" aria-label="Ver detalles de Abdominoplastia" id="card-abdominoplasty">
+                    <article class="service-card" data-modal-open="abdominoplasty" role="button" tabindex="0" aria-label="Ver detalles de Abdominoplastia" id="card-abdominoplasty">
                         <div class="service-icon">
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <path d="M6 13.5c0-3.866 2.239-7.228 5.5-8.866"/>
@@ -308,7 +326,7 @@
                         <span class="service-link" aria-hidden="true">Más información →</span>
                     </article>
 
-                    <article class="service-card" onclick="openModal('liposculpt')" role="button" tabindex="0" aria-label="Ver detalles de Liposcultura Integral" id="card-liposculpt">
+                    <article class="service-card" data-modal-open="liposculpt" role="button" tabindex="0" aria-label="Ver detalles de Liposcultura Integral" id="card-liposculpt">
                         <div class="service-icon">
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
@@ -413,7 +431,7 @@
         <section class="contact" id="contact" aria-label="Información de contacto">
             <div class="container">
                 <h2>Agendar tu Consulta</h2>
-                <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Contáctanos para comenzar tu transformación</p>
+                <p class="section-subtitle">Contáctanos para comenzar tu transformación</p>
                 <div class="contact-content">
                     <a class="contact-method" href="https://wa.me/5491136186160?text=Hola%20Dr.%20Berbel%2C%20quisiera%20agendar%20una%20consulta" target="_blank" rel="noopener" id="contact-whatsapp" aria-label="Escribir por WhatsApp al +54 9 11 3618-6160">
                         <div class="contact-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.149-.174.198-.298.298-.496.099-.198.05-.372-.025-.521-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.414z"/></svg></div>
@@ -479,7 +497,7 @@
     <!-- Modals -->
     <div class="modal" id="lipoModal" role="dialog" aria-labelledby="lipoModalTitle" aria-modal="true">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('lipo')" aria-label="Cerrar">✕</button>
+            <button class="modal-close" aria-label="Cerrar">✕</button>
             <h3 id="lipoModalTitle">Liposucción Micro Aire y VASER</h3>
             <p><strong>Tecnología:</strong> El ultrasonido VASER de tercera generación emulsifica la grasa de forma selectiva, respetando vasos y nervios; la cánula vibratoria Micro Aire (PAL) la extrae de manera uniforme y controlada.</p>
             <p><strong>Beneficios:</strong></p>
@@ -496,7 +514,7 @@
 
     <div class="modal" id="melaModal" role="dialog" aria-labelledby="melaModalTitle" aria-modal="true">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('mela')" aria-label="Cerrar">✕</button>
+            <button class="modal-close" aria-label="Cerrar">✕</button>
             <h3 id="melaModalTitle">MELA</h3>
             <p><strong>Tecnología:</strong> Combinación de láser con liposucción para estimular colágeno.</p>
             <p><strong>Beneficios:</strong></p>
@@ -525,7 +543,7 @@
 
     <div class="modal" id="dermolipectomyModal" role="dialog" aria-labelledby="dermolipectomyModalTitle" aria-modal="true">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('dermolipectomy')" aria-label="Cerrar">✕</button>
+            <button class="modal-close" aria-label="Cerrar">✕</button>
             <h3 id="dermolipectomyModalTitle">Dermolipectomía</h3>
             <p><strong>Procedimiento:</strong> Extirpación quirúrgica de exceso de piel y grasa.</p>
             <p><strong>Indicado para:</strong></p>
@@ -542,7 +560,7 @@
 
     <div class="modal" id="abdominoplastyModal" role="dialog" aria-labelledby="abdominoplastyModalTitle" aria-modal="true">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('abdominoplasty')" aria-label="Cerrar">✕</button>
+            <button class="modal-close" aria-label="Cerrar">✕</button>
             <h3 id="abdominoplastyModalTitle">Abdominoplastia</h3>
             <p><strong>Procedimiento:</strong> Remodelación completa del abdomen con reparación muscular.</p>
             <p><strong>Incluye:</strong></p>
@@ -559,7 +577,7 @@
 
     <div class="modal" id="liposculptModal" role="dialog" aria-labelledby="liposculptModalTitle" aria-modal="true">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal('liposculpt')" aria-label="Cerrar">✕</button>
+            <button class="modal-close" aria-label="Cerrar">✕</button>
             <h3 id="liposculptModalTitle">Liposcultura Integral</h3>
             <p><strong>Procedimiento:</strong> Combinación personalizada de técnicas para silueta armoniosa.</p>
             <p><strong>Áreas tratables:</strong></p>

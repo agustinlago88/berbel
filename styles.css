@@ -665,6 +665,10 @@ section h2 {
     letter-spacing: -0.5px;
 }
 
+.contact .section-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+}
+
 .contact-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -779,14 +783,14 @@ section h2 {
 }
 
 .video-container {
-    max-width: 900px;
+    max-width: 600px;
     margin: 0 auto;
     border-radius: 18px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(15,31,46,0.18), 0 4px 16px rgba(0,0,0,0.08);
     background: #000;
     position: relative;
-    aspect-ratio: 16/9;
+    aspect-ratio: 1;
 }
 
 .video-container video {
@@ -816,8 +820,8 @@ section h2 {
     border-radius: 12px;
     background: #000;
     display: block;
-    max-height: 300px;
-    object-fit: cover;
+    max-height: 400px;
+    object-fit: contain;
 }
 
 /* ============================================
@@ -1176,7 +1180,6 @@ footer a:hover {
 
     .video-container {
         border-radius: 12px;
-        aspect-ratio: 4/3;
     }
 
     .video-cta {
@@ -1300,7 +1303,7 @@ footer a:hover {
     }
 
     .modal-video video {
-        max-height: 180px;
+        max-height: 280px;
     }
 }
 

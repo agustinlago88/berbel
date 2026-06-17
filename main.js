@@ -43,14 +43,13 @@
         if (modal) {
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
+            var closeBtn = modal.querySelector('.modal-close');
+            if (closeBtn) closeBtn.focus();
         }
     }
 
-    function closeModal(procedureName) {
-        var modalId = procedureName + 'Modal';
-        var modal = document.getElementById(modalId);
+    function closeModal(modal) {
         if (modal) {
-            // Pause any playing video inside the modal
             var video = modal.querySelector('video');
             if (video) video.pause();
             modal.classList.remove('active');
@@ -60,26 +59,32 @@
 
     function closeAllModals() {
         document.querySelectorAll('.modal.active').forEach(function (modal) {
-            // Pause any playing video inside each modal
-            var video = modal.querySelector('video');
-            if (video) video.pause();
-            modal.classList.remove('active');
+            closeModal(modal);
         });
-        document.body.style.overflow = '';
     }
 
-    // Expose to global for onclick handlers
-    window.openModal = openModal;
-    window.closeModal = closeModal;
+    // Attach modal trigger listeners via event delegation
+    document.addEventListener('click', function (e) {
+        var openTrigger = e.target.closest('[data-modal-open]');
+        if (openTrigger) {
+            e.preventDefault();
+            var modalName = openTrigger.getAttribute('data-modal-open');
+            openModal(modalName);
+            return;
+        }
 
-    // Close modal when clicking outside content
-    document.querySelectorAll('.modal').forEach(function (modal) {
-        modal.addEventListener('click', function (e) {
-            if (e.target === this) {
-                this.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
+        var closeTrigger = e.target.closest('.modal-close');
+        if (closeTrigger) {
+            e.preventDefault();
+            var modal = closeTrigger.closest('.modal');
+            closeModal(modal);
+            return;
+        }
+
+        // Close modal when clicking on the backdrop
+        if (e.target.classList.contains('modal')) {
+            closeModal(e.target);
+        }
     });
 
     // ─── Mobile Menu Toggle ─────────────────────
@@ -113,6 +118,13 @@
             closeAllModals();
             // Close mobile menu
             closeMenu();
+        } else if (e.key === 'Enter' || e.key === ' ') {
+            var openTrigger = e.target.closest('[data-modal-open]');
+            if (openTrigger) {
+                e.preventDefault();
+                var modalName = openTrigger.getAttribute('data-modal-open');
+                openModal(modalName);
+            }
         }
     });
 
