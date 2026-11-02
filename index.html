@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-vr59LqWEtYl4IaGS9ytalcYheoW66uVIMXLixR3u/8g='; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://agustinlago88.github.io; frame-src https://maps.google.com https://www.google.com; connect-src 'self'; media-src 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://connect.facebook.net https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://agustinlago88.github.io https://gastonberbel.com.ar https://www.facebook.com https://*.google-analytics.com https://*.googletagmanager.com; frame-src https://maps.google.com https://www.google.com; connect-src 'self' https://www.facebook.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; media-src 'self';">
 
     <!-- TITLE: ≤60 chars. Enfoque en credencial + tecnología + ubicación. Sin body shaming. -->
     <title>Dr. Gastón Berbel | Contorno Corporal VASER · Puerto Madero</title>
@@ -85,7 +85,7 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>">
 
     <!-- Preload hero image for LCP -->
-    <link rel="preload" as="image" href="images/dr-berbel-crop.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="images/dr-berbel-crop.webp" type="image/webp" fetchpriority="high">
 
     <!-- Analytics & Tracking -->
     <!-- ══════════════════════════════════════════════════════
@@ -171,6 +171,16 @@
                     "@type": "City",
                     "name": "Buenos Aires"
                 },
+                "priceRange": "$$$",
+                "hasMap": "https://maps.google.com/?q=Aim%C3%A9+Paine+1665+Puerto+Madero",
+                "openingHoursSpecification": [
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                        "opens": "09:00",
+                        "closes": "19:00"
+                    }
+                ],
                 "sameAs": [
                     "https://www.instagram.com/drberbelgaston/"
                 ],
@@ -285,7 +295,10 @@
                 <h2>Sobre Dr. Gastón Berbel</h2>
                 <div class="about-content">
                     <div class="about-image">
+                        <picture>
+                        <source srcset="images/dr-berbel-crop.webp" type="image/webp">
                         <img src="images/dr-berbel-crop.jpg" alt="Dr. Gastón Berbel — Cirujano Plástico especializado en cirugía corporal" loading="lazy" width="600" height="800">
+                    </picture>
                     </div>
                     <div class="about-text">
                         <h3>Especialista en Cirugía Corporal</h3>
@@ -395,7 +408,7 @@
                         controls
                         preload="metadata"
                         playsinline
-                        poster="images/dr-berbel-crop.jpg"
+                        poster="images/dr-berbel-crop.webp"
                         aria-label="Video explicativo del procedimiento MELA por el Dr. Gastón Berbel">
                         <source src="melavideo.mp4" type="video/mp4">
                         Tu navegador no soporta la reproducción de video.
@@ -572,7 +585,7 @@
                     controls
                     preload="none"
                     playsinline
-                    poster="images/dr-berbel-crop.jpg"
+                    poster="images/dr-berbel-crop.webp"
                     aria-label="Video del procedimiento MELA">
                     <source src="melavideo.mp4" type="video/mp4">
                 </video>

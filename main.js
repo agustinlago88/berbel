@@ -173,4 +173,40 @@
             revealObserver.observe(el);
         });
     }
+
+    // ─── Analytics Event Tracking (WhatsApp & Form conversions) ───
+    document.addEventListener('click', function (e) {
+        var waLink = e.target.closest('a[href*="wa.me"]');
+        if (waLink) {
+            var urlStr = waLink.getAttribute('href') || '';
+            var campaign = 'direct';
+            var content = 'cta';
+
+            try {
+                var parsedUrl = new URL(urlStr, window.location.href);
+                campaign = parsedUrl.searchParams.get('utm_campaign') || 'direct';
+                content = parsedUrl.searchParams.get('utm_content') || 'cta';
+            } catch (err) {
+                // fallback if URL parsing fails
+            }
+
+            // Meta Pixel Lead / Contact Event
+            if (typeof window.fbq === 'function') {
+                window.fbq('track', 'Contact', {
+                    content_name: 'WhatsApp Contact',
+                    content_category: campaign,
+                    content_label: content
+                });
+            }
+
+            // GA4 generate_lead Event
+            if (typeof window.gtag === 'function') {
+                window.gtag('event', 'generate_lead', {
+                    event_category: 'WhatsApp',
+                    event_label: campaign + ' / ' + content
+                });
+            }
+        }
+    });
+
 })();
