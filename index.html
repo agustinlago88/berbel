@@ -22,6 +22,8 @@
     <meta name="author" content="Dr. Gastón Berbel">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
     <link rel="canonical" href="https://agustinlago88.github.io/berbel/">
+    <!-- Sitemap discovery -->
+    <link rel="sitemap" type="application/xml" href="/berbel/sitemap.xml">
 
     <!-- ═══════════════════════════════════════════════════════════
          Open Graph — Optimizado para WhatsApp, Facebook, LinkedIn
@@ -79,6 +81,43 @@
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Styles -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>">
+
+    <!-- Preload hero image for LCP -->
+    <link rel="preload" as="image" href="images/dr-berbel-crop.jpg" fetchpriority="high">
+
+    <!-- Analytics & Tracking -->
+    <!-- ══════════════════════════════════════════════════════
+         META PIXEL — Reemplazar META_PIXEL_ID con el ID real
+         ══════════════════════════════════════════════════════ -->
+    <!--
+    <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'META_PIXEL_ID');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=META_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+    -->
+
+    <!-- ══════════════════════════════════════════════════════
+         GOOGLE ANALYTICS 4 — Reemplazar GA4_MEASUREMENT_ID
+         ══════════════════════════════════════════════════════ -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA4_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA4_MEASUREMENT_ID');
+    </script>
+    -->
+
     <link rel="stylesheet" href="styles.css">
 
     <!-- ═══════════════════════════════════════════════════════════
@@ -231,10 +270,10 @@
         <section class="hero" id="hero">
             <div class="hero-content">
                 <span class="hero-eyebrow">Cirugía Plástica Corporal</span>
-                <h1>Transformación Corporal Profesional</h1>
+                <h1>Liposucción VASER y MELA en Buenos Aires</h1>
                 <p>Procedimientos quirúrgicos de clase mundial con resultados naturales y seguros, en el corazón de Puerto Madero</p>
                 <div class="hero-buttons">
-                    <a href="https://wa.me/5491136186160" target="_blank" rel="noopener" class="btn-primary" id="hero-cta-whatsapp">Agendar Consulta</a>
+                    <a href="https://wa.me/5491136186160?text=Hola%20Dr.%20Berbel%2C%20quisiera%20agendar%20una%20consulta%20sobre%20liposucci%C3%B3n%20o%20MELA&utm_source=website&utm_medium=organic&utm_campaign=hero-cta&utm_content=agendar-consulta" target="_blank" rel="noopener" class="btn-primary" id="hero-cta-whatsapp">Agendar Consulta</a>
                     <a href="#services" class="btn-secondary" id="hero-cta-services">Ver Procedimientos</a>
                 </div>
             </div>
@@ -282,7 +321,7 @@
                                 <line x1="6" y1="12" x2="18" y2="12" stroke-opacity="0.3"/>
                             </svg>
                         </div>
-                        <h3>Liposucción Micro Aire y VASER</h3>
+                        <h3>Liposucción VASER y Micro Aire — Contorno Corporal</h3>
                         <p>Tecnología combinada: ultrasonido VASER que emulsifica la grasa de forma selectiva y cánula vibratoria Micro Aire para una extracción uniforme y controlada, con menor trauma tisular, menos hematomas y recuperación más rápida.</p>
                         <span class="service-link" aria-hidden="true">Más información →</span>
                     </article>
@@ -293,7 +332,7 @@
                                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
                             </svg>
                         </div>
-                        <h3>MELA</h3>
+                        <h3>MELA — Liposucción Láser Mínimamente Invasiva</h3>
                         <p>Combinación de láser y liposucción que estimula la producción de colágeno, mejorando la calidad y retracción de la piel durante la extracción de grasa.</p>
                         <span class="service-link" aria-hidden="true">Más información →</span>
                     </article>
@@ -334,7 +373,7 @@
                                 <circle cx="12" cy="12" r="3" fill="currentColor"/>
                             </svg>
                         </div>
-                        <h3>Liposcultura Integral</h3>
+                        <h3>Liposcultura Integral — Modelado Corporal Personalizado</h3>
                         <p>Combinación de técnicas avanzadas para crear una silueta armoniosa y proporcionada. Tratamiento personalizado de múltiples zonas del cuerpo.</p>
                         <span class="service-link" aria-hidden="true">Más información →</span>
                     </article>
@@ -363,7 +402,7 @@
                     </video>
                 </div>
                 <div class="video-cta">
-                    <a href="https://wa.me/5491136186160?text=Hola%20Dr.%20Berbel%2C%20vi%20el%20video%20de%20MELA%20y%20quisiera%20más%20información" target="_blank" rel="noopener" class="btn-primary" id="video-cta-whatsapp">Consultar sobre MELA</a>
+                    <a href="https://wa.me/5491136186160?text=Hola%20Dr.%20Berbel%2C%20vi%20el%20video%20de%20MELA%20y%20quisiera%20saber%20si%20soy%20candidato%2Fa%20para%20el%20procedimiento&utm_source=website&utm_medium=organic&utm_campaign=mela-video&utm_content=video-cta" target="_blank" rel="noopener" class="btn-primary" id="video-cta-whatsapp">Consultar sobre MELA</a>
                 </div>
             </div>
         </section>
@@ -433,7 +472,7 @@
                 <h2>Agendar tu Consulta</h2>
                 <p class="section-subtitle">Contáctanos para comenzar tu transformación</p>
                 <div class="contact-content">
-                    <a class="contact-method" href="https://wa.me/5491136186160?text=Hola%20Dr.%20Berbel%2C%20quisiera%20agendar%20una%20consulta" target="_blank" rel="noopener" id="contact-whatsapp" aria-label="Escribir por WhatsApp al +54 9 11 3618-6160">
+                    <a class="contact-method" href="https://wa.me/5491136186160?text=Hola%20Dr.%20Berbel%2C%20quisiera%20agendar%20una%20consulta%20sobre%20liposucci%C3%B3n%20o%20MELA&utm_source=website&utm_medium=organic&utm_campaign=contact-section&utm_content=whatsapp-icon" target="_blank" rel="noopener" id="contact-whatsapp" aria-label="Escribir por WhatsApp al +54 9 11 3618-6160">
                         <div class="contact-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.149-.174.198-.298.298-.496.099-.198.05-.372-.025-.521-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.414z"/></svg></div>
                         <div class="contact-info">
                             <div class="contact-label">WhatsApp</div>
@@ -488,7 +527,7 @@
     </footer>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/5491136186160" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Escribir por WhatsApp" id="whatsapp-float">
+    <a href="https://wa.me/5491136186160?text=Hola%20Dr.%20Berbel%2C%20quisiera%20consultar%20sobre%20MELA%20o%20liposucci%C3%B3n&utm_source=website&utm_medium=organic&utm_campaign=whatsapp-float&utm_content=floating-btn" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Escribir por WhatsApp" id="whatsapp-float">
         <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.149-.174.198-.298.298-.496.099-.198.05-.372-.025-.521-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.414z"/>
         </svg>

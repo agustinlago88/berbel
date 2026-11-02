@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Bloquear archivos de respaldo y HTML original no canónico
+Disallow: /dr-berbel.html
+Disallow: /dr-berbel-ai-seo.md
+Disallow: /uploads/
+Disallow: /screenshots/
+Disallow: /versions/
+
+# Sitemap
+Sitemap: https://agustinlago88.github.io/berbel/sitemap.xml

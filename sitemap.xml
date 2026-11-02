@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://agustinlago88.github.io/berbel/</loc>
+    <lastmod>2026-11-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://agustinlago88.github.io/berbel/images/dr-berbel-crop.jpg</image:loc>
+      <image:title>Dr. Gastón Berbel — Cirujano Plástico en Puerto Madero</image:title>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://agustinlago88.github.io/berbel/images/dr-berbel-crop.jpg</video:thumbnail_loc>
+      <video:title>Tecnología MELA en Acción | Dr. Gastón Berbel</video:title>
+      <video:description>Video demostrativo del procedimiento MELA (Mini Extracción Lipídica Ambulatoria) en Puerto Madero.</video:description>
+      <video:content_loc>https://agustinlago88.github.io/berbel/melavideo.mp4</video:content_loc>
+      <video:duration>28</video:duration>
+      <video:publication_date>2026-06-17T12:00:00-03:00</video:publication_date>
+    </video:video>
+  </url>
+</urlset>
