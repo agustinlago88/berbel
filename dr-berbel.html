@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Gastón Berbel | Cirugía Corporal Especializada</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a3a52;
+            --primary-light: #2d5a7b;
+            --primary-dark: #0f1f2e;
+            --accent: #c9a961;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+            --gray-light: #f5f5f5;
+            --gray-medium: #999999;
+            --bg-white: #ffffff;
+            --border: #e8e8e8;
+            --shadow: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-lg: 0 12px 32px rgba(0,0,0,0.12);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.7;
+            background: var(--bg-white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        /* Header / Navbar */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.82);
+            -webkit-backdrop-filter: blur(18px) saturate(1.5);
+            backdrop-filter: blur(18px) saturate(1.5);
+            border-bottom: 1px solid rgba(15,31,46,0.08);
+            z-index: 1000;
+            transition: box-shadow 0.3s ease, background 0.3s ease;
+        }
+
+        header.scrolled {
+            background: rgba(255,255,255,0.94);
+            box-shadow: 0 8px 30px rgba(15,31,46,0.10);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-family: 'Sora', sans-serif;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .logo-subtitle {
+            font-size: 0.58rem;
+            color: var(--accent);
+            font-weight: 700;
+            font-family: 'Manrope', sans-serif;
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            margin-top: 0.25rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+            position: relative;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2.5px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .cta-btn {
+            background: var(--primary-dark);
+            color: white;
+            padding: 0.7rem 1.7rem;
+            border-radius: 999px;
+            transition: background 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 0.88rem;
+            font-weight: 700;
+            font-family: 'Manrope', sans-serif;
+            letter-spacing: 0.02em;
+        }
+
+        .cta-btn:hover {
+            background: var(--accent);
+            color: var(--text-dark);
+            transform: translateY(-2px);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-dark);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 60px;
+            background: linear-gradient(135deg, #1a3a52 0%, #0f1f2e 100%);
+            color: white;
+            padding: 7rem 2rem;
+            text-align: center;
+            min-height: calc(100vh - 60px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(rgba(15,31,46,0.82), rgba(15,31,46,0.88)), url('images/dr-berbel-crop.jpg');
+            background-size: cover;
+            background-position: center 30%;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(26,58,82,0.45) 0%, rgba(15,31,46,0.65) 100%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 760px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-eyebrow {
+            display: inline-block;
+            color: var(--accent);
+            font-size: 0.72rem;
+            font-weight: 700;
+            font-family: 'Manrope', sans-serif;
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            margin-bottom: 1.8rem;
+            padding: 0.55rem 1.3rem;
+            border: 1px solid rgba(201,169,97,0.45);
+            border-radius: 999px;
+            background: rgba(201,169,97,0.10);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5.5vw, 4.2rem);
+            margin-bottom: 1.2rem;
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            line-height: 1.12;
+            letter-spacing: -0.03em;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            line-height: 1.8;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--text-dark);
+            padding: 1.1rem 2.8rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent);
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-family: 'Manrope', sans-serif;
+            letter-spacing: 0.02em;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(201,169,97,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1.1rem 2.8rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.6);
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-family: 'Manrope', sans-serif;
+            letter-spacing: 0.02em;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-color: white;
+            transform: translateY(-3px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(26px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 6rem 2rem;
+        }
+
+        section h2 {
+            font-size: clamp(2.1rem, 4vw, 2.9rem);
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+            font-family: 'Sora', sans-serif;
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 4rem;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--gray-light);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 25%;
+            display: block;
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(201,169,97,0.5);
+            border-radius: 18px;
+            pointer-events: none;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+            font-family: 'Sora', sans-serif;
+            letter-spacing: -0.5px;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            line-height: 1.85;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .credentials {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: white;
+            border-left: 3px solid var(--accent);
+            border-radius: 2px;
+            box-shadow: var(--shadow);
+        }
+
+        .credentials h4 {
+            color: var(--primary-dark);
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+            font-family: 'Sora', sans-serif;
+        }
+
+        .credentials ul {
+            list-style: none;
+            color: var(--text-light);
+        }
+
+        .credentials li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .credentials li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--bg-white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 18px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid var(--border);
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(201,169,97,0.55);
+        }
+
+        .service-icon {
+            width: 65px;
+            height: 65px;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+            color: var(--primary-dark);
+            font-family: 'Sora', sans-serif;
+            letter-spacing: -0.5px;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        .service-link {
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .service-link:hover {
+            color: var(--accent);
+            gap: 1rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: var(--gray-light);
+        }
+
+        .faq-container {
+            max-width: 750px;
+            margin: 3rem auto 0;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .faq-question {
+            padding: 1.8rem;
+            background: white;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: var(--primary-dark);
+            font-family: 'Sora', sans-serif;
+            font-size: 1.05rem;
+        }
+
+        .faq-question:hover {
+            background: var(--gray-light);
+            color: var(--accent);
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: var(--accent);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1.8rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 1.8rem 1.8rem;
+        }
+
+        .faq-answer p {
+            color: var(--text-light);
+            line-height: 1.85;
+            font-weight: 400;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        /* Map */
+        .map-wrapper {
+            max-width: 900px;
+            margin: 3.5rem auto 0;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 4px solid rgba(255,255,255,0.1);
+        }
+
+        .map-wrapper iframe {
+            display: block;
+            width: 100%;
+            height: 380px;
+            border: 0;
+            filter: grayscale(0.3) contrast(1.05);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #1a3a52 0%, #0f1f2e 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: white;
+            font-family: 'Sora', sans-serif;
+            letter-spacing: -0.5px;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-method {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            padding: 2.2rem 1.5rem;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.14);
+            border-radius: 18px;
+            text-decoration: none;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .contact-method:hover {
+            transform: translateY(-6px);
+            border-color: rgba(201,169,97,0.65);
+            background: rgba(255,255,255,0.10);
+        }
+
+        .contact-action {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .contact-label {
+            font-weight: 600;
+            font-size: 1rem;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .contact-link {
+            color: var(--accent);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .contact-link:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+            color: white;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(37,211,102,0.4);
+            z-index: 999;
+            transition: all 0.3s ease;
+            animation: waPulse 2.5s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 28px rgba(37,211,102,0.55);
+        }
+
+        @keyframes waPulse {
+            0% { box-shadow: 0 6px 20px rgba(37,211,102,0.4), 0 0 0 0 rgba(37,211,102,0.45); }
+            70% { box-shadow: 0 6px 20px rgba(37,211,102,0.4), 0 0 0 16px rgba(37,211,102,0); }
+            100% { box-shadow: 0 6px 20px rgba(37,211,102,0.4), 0 0 0 0 rgba(37,211,102,0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .whatsapp-float { animation: none; }
+        }
+
+        /* Footer */
+        footer {
+            background: #0f1f2e;
+            color: white;
+            text-align: center;
+            padding: 2.5rem 2rem;
+            font-size: 0.85rem;
+            font-family: 'Manrope', sans-serif;
+            letter-spacing: 0.3px;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 18px;
+            max-width: 520px;
+            width: 90%;
+            box-shadow: var(--shadow-lg);
+            animation: slideUp 0.3s ease;
+            position: relative;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--text-dark);
+        }
+
+        .modal-content h3 {
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.9rem;
+            letter-spacing: -0.5px;
+        }
+
+        .modal-content p {
+            color: var(--text-light);
+            margin-bottom: 1.2rem;
+            line-height: 1.85;
+            font-size: 0.95rem;
+            font-weight: 400;
+        }
+
+        .modal-content ul {
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                gap: 0;
+                padding: 0;
+                box-shadow: var(--shadow-lg);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.35s ease;
+                border-top: 1px solid var(--border);
+            }
+
+            .nav-menu.open {
+                max-height: 75vh;
+            }
+
+            .nav-menu li {
+                width: 100%;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-menu a {
+                display: block;
+                padding: 1.1rem 2rem;
+                font-size: 1rem;
+            }
+
+            .nav-menu a::after {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .menu-toggle span {
+                transition: all 0.3s ease;
+            }
+
+            .menu-toggle.open span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .menu-toggle.open span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.open span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                gap: 2rem;
+            }
+
+            .btn-primary, .btn-secondary {
+                padding: 0.9rem 1.8rem;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                DR. BERBEL
+                <div class="logo-subtitle">Cirugía Corporal</div>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#faq">Preguntas</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-eyebrow">Cirugía Plástica Corporal</span>
+            <h1>Transformación Corporal Profesional</h1>
+            <p>Procedimientos quirúrgicos de clase mundial con resultados naturales y seguros, en el corazón de Puerto Madero</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/5491136186160" target="_blank" rel="noopener" class="btn-primary">Agendar Consulta</a>
+                <a href="#services" class="btn-secondary">Ver Procedimientos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>Sobre Dr. Gastón Berbel</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/dr-berbel-crop.jpg" alt="Dr. Gastón Berbel en cirugía" loading="lazy">
+                </div>
+                <div class="about-text">
+                    <h3>Especialista en Cirugía Corporal</h3>
+                    <p>Con más de 15 años de experiencia en procedimientos de transformación corporal, el Dr. Gastón Berbel es reconocido por su precisión, atención al detalle y resultados naturales que superan las expectativas de sus pacientes.</p>
+                    <p>Utiliza las técnicas más avanzadas en liposucción, liposcultura y abdominoplastia, combinando arte y ciencia para lograr transformaciones seguras y duraderas.</p>
+                    <p>Comprometido con la excelencia y la satisfacción del paciente, cada procedimiento se realiza bajo los más altos estándares de seguridad y calidad.</p>
+                    <div class="credentials">
+                        <h4>Credenciales y Especialidades</h4>
+                        <ul>
+                            <li>Cirujano Plástico Certificado</li>
+                            <li>Especialista en Liposucción VASER y Micro Aire</li>
+                            <li>Experto en MELA</li>
+                            <li>Certificación en Dermolipectomía Avanzada</li>
+                            <li>Miembro SAR</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Nuestros Procedimientos</h2>
+            <p class="section-subtitle">Transformaciones seguras y efectivas con tecnología de punta</p>
+            <div class="services-grid">
+                <div class="service-card" onclick="openModal('lipo')">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9c0-1.657 1.343-3 3-3h6c1.657 0 3 1.343 3 3v8c0 1.657-1.343 3-3 3H9c-1.657 0-3-1.343-3-3V9z"/>
+                            <path d="M9 5v2M15 5v2M9 18v2M15 18v2"/>
+                            <line x1="6" y1="12" x2="18" y2="12" stroke-opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <h3>Liposucción Micro Aire y VASER</h3>
+                    <p>Tecnología combinada: ultrasonido VASER que emulsifica la grasa de forma selectiva y cánula vibratoria Micro Aire para una extracción uniforme y controlada, con menor trauma tisular, menos hematomas y recuperación más rápida.</p>
+                    <a href="#" class="service-link">Más información →</a>
+                </div>
+
+                <div class="service-card" onclick="openModal('mela')">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
+                    </div>
+                    <h3>MELA</h3>
+                    <p>Combinación de láser y liposucción que estimula la producción de colágeno, mejorando la calidad y retracción de la piel durante la extracción de grasa.</p>
+                    <a href="#" class="service-link">Más información →</a>
+                </div>
+
+                <div class="service-card" onclick="openModal('dermolipectomy')">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="6" cy="6" r="3"/>
+                            <circle cx="18" cy="6" r="3"/>
+                            <path d="M8.12 8.53L15.88 15.47"/>
+                            <path d="M15.88 8.53L8.12 15.47"/>
+                        </svg>
+                    </div>
+                    <h3>Dermolipectomía</h3>
+                    <p>Procedimiento quirúrgico que elimina exceso de piel y grasa, ideal para pacientes con flacidez significativa o después de pérdidas de peso importantes.</p>
+                    <a href="#" class="service-link">Más información →</a>
+                </div>
+
+                <div class="service-card" onclick="openModal('abdominoplasty')">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 13.5c0-3.866 2.239-7.228 5.5-8.866"/>
+                            <path d="M18 13.5c0-3.866-2.239-7.228-5.5-8.866"/>
+                            <ellipse cx="12" cy="16" rx="6" ry="5"/>
+                            <path d="M12 8v3M9 11h6"/>
+                        </svg>
+                    </div>
+                    <h3>Abdominoplastia</h3>
+                    <p>Remodelación completa del abdomen: eliminación de exceso de piel, reparación de músculos y escultura de contornos para un resultado armonioso.</p>
+                    <a href="#" class="service-link">Más información →</a>
+                </div>
+
+                <div class="service-card" onclick="openModal('liposculpt')">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+                            <path d="M12 6v12M6 12h12"/>
+                            <circle cx="12" cy="12" r="3" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3>Liposcultura Integral</h3>
+                    <p>Combinación de técnicas avanzadas para crear una silueta armoniosa y proporcionada. Tratamiento personalizado de múltiples zonas del cuerpo.</p>
+                    <a href="#" class="service-link">Más información →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2>Preguntas Frecuentes</h2>
+            <p class="section-subtitle">Respuestas a tus dudas más comunes</p>
+            <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Cuál es el tiempo de recuperación?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>El tiempo de recuperación varía según el procedimiento. La liposucción VASER y Micro Aire típicamente requieren 2-4 semanas de descanso relativo, mientras que procedimientos más extensos como abdominoplastia pueden necesitar 4-6 semanas. La mayoría de pacientes pueden retomar actividades ligeras en 2-3 semanas.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Cuáles son los riesgos asociados?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Como cualquier procedimiento quirúrgico, existen riesgos mínimos como infección, seroma o hematoma. El Dr. Berbel utiliza protocolos rigurosos de seguridad y sus pacientes reciben cuidado postoperatorio exhaustivo para minimizar complicaciones. Durante la consulta se discutirán todos los riesgos potenciales.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Los resultados son permanentes?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>La liposucción remueve adipocitos de forma definitiva: en el adulto el número de células grasas es relativamente estable, por lo que las células extraídas no se regeneran. Sin embargo, los adipocitos remanentes conservan su capacidad de hipertrofia ante un balance calórico positivo sostenido, lo que puede modificar el contorno logrado. Por eso se recomienda mantener un peso estable (variaciones menores a 3–4 kg) y actividad física regular para preservar el resultado a largo plazo.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Se pueden combinar varios procedimientos?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, muchos procedimientos se pueden combinar en una sola intervención para maximizar resultados y minimizar recuperaciones. El Dr. Berbel evaluará tu caso específico y recomendará la mejor estrategia durante la consulta.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Qué incluye la consulta inicial?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>La consulta incluye una evaluación detallada, análisis de tu anatomía, discusión de objetivos y expectativas, explicación de procedimientos, revisión de fotos, riesgos y presupuesto. Es una sesión personalizada donde el Dr. Berbel entiende completamente tus necesidades.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Agendar tu Consulta</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Contáctanos para comenzar tu transformación</p>
+            <div class="contact-content">
+                <a class="contact-method" href="https://wa.me/5491136186160?text=Hola%20Dr.%20Berbel%2C%20quisiera%20agendar%20una%20consulta" target="_blank" rel="noopener">
+                    <div class="contact-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.149-.174.198-.298.298-.496.099-.198.05-.372-.025-.521-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.414z"/></svg></div>
+                    <div class="contact-info">
+                        <div class="contact-label">WhatsApp</div>
+                        <span class="contact-link">+54 9 11 3618-6160</span>
+                    </div>
+                    <span class="contact-action">Escribir ahora →</span>
+                </a>
+
+                <a class="contact-method" href="https://www.instagram.com/drberbelgaston/" target="_blank" rel="noopener">
+                    <div class="contact-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-10.4a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg></div>
+                    <div class="contact-info">
+                        <div class="contact-label">Instagram</div>
+                        <span class="contact-link">@drberbelgaston</span>
+                    </div>
+                    <span class="contact-action">Ver perfil →</span>
+                </a>
+
+                <a class="contact-method" href="https://maps.google.com/?q=Aime+Paine+1665,+Puerto+Madero,+CABA" target="_blank" rel="noopener">
+                    <div class="contact-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+                    <div class="contact-info">
+                        <div class="contact-label">Consultorio</div>
+                        <span class="contact-link">Aimé Paine 1665, Puerto Madero</span>
+                    </div>
+                    <span class="contact-action">Cómo llegar →</span>
+                </a>
+
+                <a class="contact-method" href="mailto:contacto@drberbel.com">
+                    <div class="contact-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+                    <div class="contact-info">
+                        <div class="contact-label">Email</div>
+                        <span class="contact-link">contacto@drberbel.com</span>
+                    </div>
+                    <span class="contact-action">Enviar email →</span>
+                </a>
+            </div>
+            <div class="map-wrapper">
+                <iframe
+                    src="https://maps.google.com/maps?q=Aime%20Paine%201665%2C%20Puerto%20Madero%2C%20CABA%2C%20Buenos%20Aires&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Ubicación del consultorio Dr. Berbel - Aimé Paine 1665, Puerto Madero"></iframe>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2026 Dr. Gastón Berbel. Todos los derechos reservados.</p>
+        <p>Cirujano Plástico especializado en procedimientos corporales</p>
+        <p><a href="#">Política de Privacidad</a> | <a href="#">Términos de Servicio</a></p>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5491136186160" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Escribir por WhatsApp">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.521.149-.174.198-.298.298-.496.099-.198.05-.372-.025-.521-.074-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.414z"/>
+        </svg>
+    </a>
+
+    <!-- Modals -->
+    <div class="modal" id="lipoModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('lipo')">✕</button>
+            <h3>Liposucción Micro Aire y VASER</h3>
+            <p><strong>Tecnología:</strong> El ultrasonido VASER de tercera generación emulsifica la grasa de forma selectiva, respetando vasos y nervios; la cánula vibratoria Micro Aire (PAL) la extrae de manera uniforme y controlada.</p>
+            <p><strong>Beneficios:</strong></p>
+            <ul style="color: #7f8c8d; margin: 1rem 0; margin-left: 1.5rem;">
+                <li>Resultados más precisos y definidos</li>
+                <li>Extracción uniforme con menor traumatismo tisular</li>
+                <li>Menos moretones e hinchazón</li>
+                <li>Recuperación más rápida y cómoda</li>
+            </ul>
+            <p><strong>Duración:</strong> 1.5 a 3 horas según extensión</p>
+            <p><strong>Anestesia:</strong> General o tumescente</p>
+        </div>
+    </div>
+
+    <div class="modal" id="melaModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('mela')">✕</button>
+            <h3>MELA</h3>
+            <p><strong>Tecnología:</strong> Combinación de láser con liposucción para estimular colágeno.</p>
+            <p><strong>Beneficios:</strong></p>
+            <ul style="color: #7f8c8d; margin: 1rem 0; margin-left: 1.5rem;">
+                <li>Mejora de retracción de piel</li>
+                <li>Estimulación de colágeno natural</li>
+                <li>Reducción de flacidez</li>
+                <li>Resultados más tonificados</li>
+            </ul>
+            <p><strong>Duración:</strong> 2 a 3 horas</p>
+            <p><strong>Anestesia:</strong> General</p>
+        </div>
+    </div>
+
+    <div class="modal" id="dermolipectomyModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('dermolipectomy')">✕</button>
+            <h3>Dermolipectomía</h3>
+            <p><strong>Procedimiento:</strong> Extirpación quirúrgica de exceso de piel y grasa.</p>
+            <p><strong>Indicado para:</strong></p>
+            <ul style="color: #7f8c8d; margin: 1rem 0; margin-left: 1.5rem;">
+                <li>Exceso significativo de piel</li>
+                <li>Flacidez importante</li>
+                <li>Postoperatorio de pérdida de peso</li>
+                <li>Envejecimiento de la zona</li>
+            </ul>
+            <p><strong>Duración:</strong> 2 a 4 horas</p>
+            <p><strong>Anestesia:</strong> General</p>
+        </div>
+    </div>
+
+    <div class="modal" id="abdominoplastyModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('abdominoplasty')">✕</button>
+            <h3>Abdominoplastia</h3>
+            <p><strong>Procedimiento:</strong> Remodelación completa del abdomen con reparación muscular.</p>
+            <p><strong>Incluye:</strong></p>
+            <ul style="color: #7f8c8d; margin: 1rem 0; margin-left: 1.5rem;">
+                <li>Eliminación de exceso de piel</li>
+                <li>Reparación de músculos abdominales</li>
+                <li>Escultura de contornos</li>
+                <li>Liposucción complementaria</li>
+            </ul>
+            <p><strong>Duración:</strong> 2.5 a 4 horas</p>
+            <p><strong>Anestesia:</strong> General</p>
+        </div>
+    </div>
+
+    <div class="modal" id="liposculptModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('liposculpt')">✕</button>
+            <h3>Liposcultura Integral</h3>
+            <p><strong>Procedimiento:</strong> Combinación personalizada de técnicas para silueta armoniosa.</p>
+            <p><strong>Áreas tratables:</strong></p>
+            <ul style="color: #7f8c8d; margin: 1rem 0; margin-left: 1.5rem;">
+                <li>Abdomen y cintura</li>
+                <li>Caderas y muslos</li>
+                <li>Espalda y flancos</li>
+                <li>Brazos y piernas</li>
+            </ul>
+            <p><strong>Duración:</strong> 2 a 5 horas según extensión</p>
+            <p><strong>Anestesia:</strong> General</p>
+        </div>
+    </div>
+
+    <script>
+        // FAQ Toggle
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const wasActive = faqItem.classList.contains('active');
+            
+            // Close all FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Open clicked FAQ if it wasn't active
+            if (!wasActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Modal Functions
+        function openModal(procedureName) {
+            const modalId = procedureName + 'Modal';
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(procedureName) {
+            const modalId = procedureName + 'Modal';
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close modal when clicking outside
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        if (menuToggle && navMenu) {
+            menuToggle.addEventListener('click', function () {
+                navMenu.classList.toggle('open');
+                menuToggle.classList.toggle('open');
+            });
+        }
+
+        // Smooth scroll for navigation (header-offset aware, no scrollIntoView)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const top = target.getBoundingClientRect().top + window.pageYOffset - 60;
+                        window.scrollTo({ top: top, behavior: 'smooth' });
+                    }
+                    // close mobile menu after navigating
+                    if (navMenu) navMenu.classList.remove('open');
+                    if (menuToggle) menuToggle.classList.remove('open');
+                }
+            });
+        });
+
+        // Header scroll state
+        const headerEl = document.querySelector('header');
+        const onHeaderScroll = function () {
+            headerEl.classList.toggle('scrolled', window.scrollY > 24);
+        };
+        window.addEventListener('scroll', onHeaderScroll, { passive: true });
+        onHeaderScroll();
+
+        // Reveal on scroll
+        const revealObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.service-card, .about-text, .about-image, .faq-item, .contact-method, .credentials').forEach(function (el) {
+            el.classList.add('reveal');
+            revealObserver.observe(el);
+        });
+    </script>
+</body>
+</html>
