@@ -3,21 +3,95 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
-    <loc>https://agustinlago88.github.io/berbel/</loc>
-    <lastmod>2026-11-02</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://gastonberbel.com.ar/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://agustinlago88.github.io/berbel/images/dr-berbel-crop.jpg</image:loc>
-      <image:title>Dr. Gastón Berbel — Cirujano Plástico en Puerto Madero</image:title>
+      <image:loc>https://gastonberbel.com.ar/images/dr-berbel-crop.jpg</image:loc>
+      <image:title>Dr. Gastón Berbel — Cirujano Plástico en Puerto Madero, Buenos Aires</image:title>
     </image:image>
     <video:video>
-      <video:thumbnail_loc>https://agustinlago88.github.io/berbel/images/dr-berbel-crop.jpg</video:thumbnail_loc>
-      <video:title>Tecnología MELA en Acción | Dr. Gastón Berbel</video:title>
-      <video:description>Video demostrativo del procedimiento MELA (Mini Extracción Lipídica Ambulatoria) en Puerto Madero.</video:description>
-      <video:content_loc>https://agustinlago88.github.io/berbel/melavideo.mp4</video:content_loc>
+      <video:thumbnail_loc>https://gastonberbel.com.ar/images/dr-berbel-crop.jpg</video:thumbnail_loc>
+      <video:title>Procedimiento MELA | Dr. Gastón Berbel</video:title>
+      <video:description>Registro informativo sobre el procedimiento MELA (Mini Extracción Lipídica Ambulatoria) por el Dr. Gastón Berbel en Puerto Madero, Buenos Aires.</video:description>
+      <video:content_loc>https://gastonberbel.com.ar/melavideo.mp4</video:content_loc>
       <video:duration>28</video:duration>
       <video:publication_date>2026-06-17T12:00:00-03:00</video:publication_date>
     </video:video>
+  </url>
+
+  <url>
+    <loc>https://gastonberbel.com.ar/liposuccion-vaser-buenos-aires/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://gastonberbel.com.ar/images/proc-vaser.jpg</image:loc>
+      <image:title>Liposucción VASER en Buenos Aires | Dr. Gastón Berbel</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://gastonberbel.com.ar/liposuccion-microaire-buenos-aires/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://gastonberbel.com.ar/images/proc-microaire.jpg</image:loc>
+      <image:title>Liposucción asistida por MicroAire en Buenos Aires | Dr. Gastón Berbel</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://gastonberbel.com.ar/mela-buenos-aires/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://gastonberbel.com.ar/images/proc-mela.jpg</image:loc>
+      <image:title>MELA en Buenos Aires: evaluación médica para grasa localizada | Dr. Gastón Berbel</image:title>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://gastonberbel.com.ar/images/dr-berbel-crop.jpg</video:thumbnail_loc>
+      <video:title>Procedimiento MELA en Buenos Aires | Dr. Gastón Berbel</video:title>
+      <video:description>Video explicativo del procedimiento MELA (Mini Extracción Lipídica Ambulatoria) en Puerto Madero.</video:description>
+      <video:content_loc>https://gastonberbel.com.ar/melavideo.mp4</video:content_loc>
+      <video:duration>28</video:duration>
+      <video:publication_date>2026-06-17T12:00:00-03:00</video:publication_date>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://gastonberbel.com.ar/dermolipectomia-buenos-aires/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://gastonberbel.com.ar/images/proc-dermolipectomia.jpg</image:loc>
+      <image:title>Dermolipectomía en Buenos Aires | Dr. Gastón Berbel</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://gastonberbel.com.ar/abdominoplastia-buenos-aires/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://gastonberbel.com.ar/images/proc-abdominoplastia.jpg</image:loc>
+      <image:title>Abdominoplastia en Buenos Aires | Dr. Gastón Berbel</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://gastonberbel.com.ar/contorno-corporal/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://gastonberbel.com.ar/images/proc-contorno.jpg</image:loc>
+      <image:title>Cirugía de Contorno Corporal en Buenos Aires | Dr. Gastón Berbel</image:title>
+    </image:image>
   </url>
 </urlset>
