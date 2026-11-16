@@ -123,6 +123,15 @@
                 event_category: 'Phone',
                 event_label: href.replace('tel:', '')
             });
+            return;
+        }
+
+        // Clic en Email (mailto:)
+        if (href.indexOf('mailto:') === 0) {
+            trackConversionEvent('click_email', {
+                event_category: 'Email',
+                event_label: link.id || 'email_link'
+            });
         }
     });
 
